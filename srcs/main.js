@@ -9,7 +9,7 @@ let map = [];
 
 function drawline(x1, y1, x2, y2) {
     ctx.beginPath();
-    ctx.moveTo(x1, y1);
+    ctx.moveTo(x1, y1); 
     ctx.lineWidth = 1;
     ctx.lineTo(x2, y2);
     ctx.stroke();
@@ -74,3 +74,17 @@ function drawfdf(arr) {
         }
     }
 }
+
+function keydownfunc(e) {
+    if (e.code == "ArrowUp")
+        rotX(5);
+    if (e.code == "ArrowDown")
+        rotX(-5);
+    if (e.code == "ArrowLeft")
+        rotY(-5);
+    if (e.code == "ArrowRight")
+        rotY(5);
+    drawfdf(map);
+}
+
+window.addEventListener("keydown", keydownfunc, false);

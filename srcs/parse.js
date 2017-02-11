@@ -3,7 +3,6 @@ function initparse(file, callback) {
 
     xhr.open("GET", "http://startend.fr/fdf/maps/"+ file +".fdf");
     xhr.send();
-    console.log('DANS INITPARSE');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status == 200) {
             if (xhr.status == 200) {
