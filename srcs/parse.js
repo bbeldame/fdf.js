@@ -1,7 +1,7 @@
 function initparse(file, callback) {
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "http://startend.fr/fdf/maps/"+ file +".fdf");
+    xhr.open("GET", "http://bbelda.me/maps/" + file + ".fdf");
     xhr.send();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status == 200) {
@@ -26,10 +26,10 @@ function parse(strmap, callback) {
             map[y].push({
                 x: x - cols.length / 2,
                 y: y - rows.length / 2,
-                z: Number(point[0])
+                z: Number(point[0]) / 5
             });
         });
     });
-    console.log(map);
+    document.getElementById("loading").style.visibility = 'hidden';
     callback(map);
 }
